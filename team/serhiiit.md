@@ -3,6 +3,7 @@
 **💻 System administrator | 🚀 DevOps | 🏆 Problem Solver**
 
 📍 **Location:** Italy
+
 📧 **Email:**   
 📱 **Telegram:** [@serhii](https://t.me/)  
 💼 **LinkedIn:** [Serhii](https://linkedin.com/)  
@@ -11,9 +12,7 @@
 ---
 
 ## 🛠 Technical Skills
-- **Windows**: administration
-- **MacOS**: administration
-- **Linux**: administration
+- **Linux** / **Windows** / **MacOS**: administration
 - **Network**: configuration, diagnostics, monitoring
 - **Troubleshooting**: problem detection and resolution
 - **Backend:** Python (Django/Flask), Percona, PostgreSQL
