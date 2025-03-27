@@ -1,79 +1,87 @@
+#!/usr/bin/env python3
+"""
+Генератор веб-сайту команди з Markdown-профілів
+"""
+
+import glob
 import os
-import markdown
-import re
+from markdown2 import markdown
+from datetime import datetime
 
-def parse_markdown(content):
-    """Парсить ім'я, навички та посилання із Markdown-контенту."""
-    lines = content.split("\n")
-    name = lines[0].replace("# ", "") if lines[0].startswith("# ") else "Без імені"
-    skills = ""
-    links = ""
+# Конфігурація
+TEMPLATE = """
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наша Команда</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-users"></i> Наша Команда</h1>
+        <p>Останнє оновлення: {update_time}</p>
+    </header>
     
-    for line in lines[1:]:
-        if line.startswith("**Навички:**"):
-            skills = line.replace("**Навички:**", "").strip()
-        elif line.startswith("**Посилання:**"):
-            links = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', line.replace("**Посилання:**", "").strip())
+    <main class="team-container">
+        {profiles}
+    </main>
     
-    return f"""
-    <div class='member'>
-        <h2>{name}</h2>
-        <p><strong>Навички:</strong> {skills}</p>
-        <p><strong>Посилання:</strong> {links}</p>
-    </div>
-    """
+    <footer>
+        <p>© {year} Всі права захищені</p>
+    </footer>
+</body>
+</html>
+"""
 
-def read_markdown_files(directory):
-    """Зчитує всі .md файли та повертає їх у вигляді відформатованого HTML."""
-    team_members = []
-    for filename in sorted(os.listdir(directory)):
-        if filename.endswith(".md"):
-            filepath = os.path.join(directory, filename)
-            with open(filepath, "r", encoding="utf-8") as file:
-                content = file.read()
-                member_html = parse_markdown(content)
-                team_members.append(member_html)
-    return team_members
-
-def generate_index_html(team_members):
-    """Генерує index.html зі списком команди."""
-    template = """
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Our Team</title>
-        <style>
-            body { font-family: Arial, sans-serif; margin: 40px; }
-            .member { border-bottom: 1px solid #ccc; padding: 20px; }
-            h2 { color: #2c3e50; }
-        </style>
-    </head>
-    <body>
-        <h1>Meet Our Team</h1>
-        {content}
-    </body>
-    </html>
-    """
-    members_html = "\n".join(team_members)
-    return template.replace("{content}", members_html)
-
-def save_index_html(content, output_file="index.html"):
-    """Зберігає HTML-контент у файл."""
-    with open(output_file, "w", encoding="utf-8") as file:
-        file.write(content)
+def generate_profile_cards():
+    """Генерує HTML-картки з профілів команди"""
+    profiles_html = ""
+    
+    for file_path in sorted(glob.glob("team/*.md")):
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                md_content = f.read()
+                
+            # Конвертація Markdown → HTML
+            html_content = markdown(
+                md_content,
+                extras=["fenced-code-blocks", "tables"]
+            )
+            
+            # Додаємо картку профілю
+            profiles_html += f"""
+            <div class="profile-card">
+                {html_content}
+            </div>
+            """
+            
+        except Exception as e:
+            print(f"Помилка при обробці {file_path}: {str(e)}")
+    
+    return profiles_html
 
 def main():
-    directory = "team"
-    if not os.path.exists(directory):
-        print(f"Директорія '{directory}' не знайдена.")
-        return
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    current_year = datetime.now().year
     
-    team_members = read_markdown_files(directory)
-    html_content = generate_index_html(team_members)
-    save_index_html(html_content)
-    print("Файл index.html успішно створено!")
+    # Генеруємо контент
+    profiles = generate_profile_cards()
+    
+    # Заповнюємо шаблон
+    final_html = TEMPLATE.format(
+        profiles=profiles,
+        update_time=current_time,
+        year=current_year
+    )
+    
+    # Зберігаємо результат
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(final_html)
+    
+    print(f"Сайт успішно згенеровано о {current_time}")
 
 if __name__ == "__main__":
     main()
