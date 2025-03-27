@@ -1,18 +1,28 @@
 # Serhii Kalanchuk
 
-🚀 **Linux | Windows | MacOS | Network | Troubleshooting**
+# Serhii Kan
+**💻 System administrator | 🚀 DevOps | 🏆 Problem Solver**
 
-Hi! I'm **Serhii Kalanchuk**, an engineer passionate about Linux administration, networking, and container technologies. I specialize in solving complex technical challenges, optimizing systems, and troubleshooting issues to ensure seamless business operations.
+📍 **Location:** Italy
+📧 **Email:**   
+📱 **Telegram:** [@serhii_kan](https://t.me/)  
+💼 **LinkedIn:** [Serhii Kan](https://linkedin.com/)  
+🐙 **GitHub:** [github.com/serhii-kan](https://github.com/)  
 
 ---
 
-### 🔧 Skills & Expertise:
-- **Linux**: administration, optimization, security
+## 🛠 Technical Skills
+- **Windows**: administration
+- **MacOS**: administration
+- **Linux**: administration
 - **Network**: configuration, diagnostics, monitoring
 - **Troubleshooting**: problem detection and resolution
+- **Backend:** Python (Django/Flask), Percona, PostgreSQL
+- **DevOps:** Docker, AWS, GitHub Actions
+- **Other:** REST APIs, CI/CD Pipelines
 
 ---
 
-### 📬 Contact Me:
-- 📢 [Telegram](https://t.me/Serhii_IT_net)
-- 💼 [LinkedIn]()
+## ✨ Fun Fact
+"I once automated my coffee machine to brew when my morning alarm goes off ☕🤖"
+
