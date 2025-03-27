@@ -14,9 +14,9 @@
 ## 🌐 Соцмережі
 
 - [GitHub](https://github.com/AlekseyZhurba)
-- [Telegram](@ZhurbaO)
+
 
 ## 📫 Контакти
 
-**Email**: aleksey.zhurba89@gmail.com  
+**Email**: aleksey@gmail.com  
 **Розташування**: Україна
