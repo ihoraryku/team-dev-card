@@ -4,7 +4,6 @@
 
 📍 **Location:** Italy
 
-📧 **Email:**   
 📱 **Telegram:** [@serhii](https://t.me/)  
 💼 **LinkedIn:** [Serhii](https://linkedin.com/)  
 🐙 **GitHub:** [github.com/serhii](https://github.com/)  
