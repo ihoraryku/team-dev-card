@@ -1,13 +1,12 @@
 # Serhii Kalanchuk
 
-# Serhii Kan
 **💻 System administrator | 🚀 DevOps | 🏆 Problem Solver**
 
 📍 **Location:** Italy
 📧 **Email:**   
-📱 **Telegram:** [@serhii_kan](https://t.me/)  
-💼 **LinkedIn:** [Serhii Kan](https://linkedin.com/)  
-🐙 **GitHub:** [github.com/serhii-kan](https://github.com/)  
+📱 **Telegram:** [@serhii](https://t.me/)  
+💼 **LinkedIn:** [Serhii](https://linkedin.com/)  
+🐙 **GitHub:** [github.com/serhii](https://github.com/)  
 
 ---
 
