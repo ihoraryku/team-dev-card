@@ -10,5 +10,5 @@
 - [GitHub](https://github.com/SergiySilver)
 - [Telegram](@SerebrySergiy)
 ##📫 Contacts
-**Email**: givvy@okidoki.org.ua
+**Email**: g****@okid***.org.ua
 **Location**: Ukraine
