@@ -10,3 +10,6 @@ Discord: Suzy#7958
 - CSS
 - Javascript
 - Git
+- Github
+- Linux
+- Network
